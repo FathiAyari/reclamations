@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "766080273437",
+    "project_id": "reclamation-f5916",
+    "storage_bucket": "reclamation-f5916.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766080273437:android:0e2f46c15ac723d4a94af4",
+        "android_client_info": {
+          "package_name": "com.example.reclamations"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcn1MT-FFt7V-UtLDjW1yJuOcEhhyEAFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
