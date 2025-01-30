@@ -42,4 +42,5 @@ class MyApp extends StatelessWidget {
 * Reclamations
 * Utilisateurs
 * Profil
+* TIP => start with the HomeAdmin screen in the project
 * */
