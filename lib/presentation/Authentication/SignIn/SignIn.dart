@@ -58,7 +58,9 @@ class _SignInState extends State<SignIn> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5))),
                           onPressed: () {
-                            print(formKey.currentState!.validate());
+                            if(formKey.currentState!.validate()){
+                              Navigator.pushNamed(context, AppRouting.clientHome);
+                            }
                           },
                           child: Text(
                             "Connecter",

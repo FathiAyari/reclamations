@@ -3,6 +3,8 @@ import 'package:reclamations/presentation/Authentication/ResetPassword/ResetPass
 import 'package:reclamations/presentation/Authentication/SignIn/SignIn.dart';
 import 'package:reclamations/presentation/Authentication/SignUp/SignUp.dart';
 import 'package:reclamations/presentation/SplashScreen/SplashScreen.dart';
+import 'package:reclamations/presentation/admin/home_admin.dart';
+import 'package:reclamations/presentation/client/home_client.dart';
 
 
 class AppRouting {
@@ -10,6 +12,8 @@ class AppRouting {
   static final String signInScreen = "/sign_in";
   static final String resetPassword = "/reset_password";
   static final String signUp = "/sign_up";
+  static final String adminHome = "/admin_home";
+  static final String clientHome = "/client_home";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -21,6 +25,10 @@ class AppRouting {
         return MaterialPageRoute(builder: (_) => Resetpassword());
       case "/sign_up":
         return MaterialPageRoute(builder: (_) => Signup());
+      case "/admin_home":
+        return MaterialPageRoute(builder: (_) => HomeAdmin());
+      case "/client_home":
+        return MaterialPageRoute(builder: (_) => HomeClient());
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
