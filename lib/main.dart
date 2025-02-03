@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:reclamations/exercices/view/to_do_list_view.dart';
+import 'package:reclamations/presentation/Authentication/SignIn/SignIn.dart';
 import 'package:reclamations/presentation/client/home_client.dart';
 import 'package:reclamations/presentation/ressources/routes/router.dart';
 
@@ -24,9 +26,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      //onGenerateRoute: AppRouting.generateRoute,
-      //initialRoute: AppRouting.clientHome
-      home: HomeClient(),
+      onGenerateRoute: AppRouting.generateRoute,
+      initialRoute: AppRouting.splashScreen
 
 
 

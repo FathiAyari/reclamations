@@ -19,7 +19,7 @@ class _InputfieldState extends State<Inputfield> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: Constants.screenHeight* 0.01),
+      padding:  EdgeInsets.symmetric(vertical: Constants.screenHeight* 0.01,horizontal: Constants.screenWidth * 0.01),
       child: TextFormField(
         keyboardType:widget.textInputType ,
         obscureText: widget.textInputType==TextInputType.visiblePassword ? obscureText:false,// inline if

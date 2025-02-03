@@ -20,11 +20,11 @@ class AppRouting {
       case '/':
         return MaterialPageRoute(builder: (_) => SplashScreen());
       case "/sign_in":
-        return MaterialPageRoute(builder: (_) => SignIn());
+        return MaterialPageRoute(builder: (_) => SignInScreen());
       case "/reset_password":
         return MaterialPageRoute(builder: (_) => Resetpassword());
       case "/sign_up":
-        return MaterialPageRoute(builder: (_) => Signup());
+        return MaterialPageRoute(builder: (_) => SignupScreen());
       case "/admin_home":
         return MaterialPageRoute(builder: (_) => HomeAdmin());
       case "/client_home":
