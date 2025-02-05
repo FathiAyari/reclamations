@@ -29,6 +29,8 @@ class AuthServices {
     try {
       await auth.createUserWithEmailAndPassword(email: email, password: password);
 
+      // ki tekmel hedhi nhezo el uid mta3 el current user lel next step
+
       await saveUser(Cuser(
         status: 1,
         uid: user!.uid,
@@ -38,7 +40,7 @@ class AuthServices {
         lastName: lastName,
         phoneNumber: phoneNumber,
       ));
-
+// na3mlo save lel data mta3 el user fel local mta3 el app bch kif nest7a9ohem nestaa3mlohem
       return true;
     } on FirebaseException catch (e) {
       print(e);
@@ -60,12 +62,12 @@ class AuthServices {
     return Cuser.fromJson(userData.data()!);
   }
 
-  User? get user => auth.currentUser;
+  User? get user => auth.currentUser;//getter
 
   saveUser(Cuser user) async {
-    try {
-      await userCollection.doc(user.uid).set(user.toJson());
-    } catch (e) {}
+    // step 2 : creation mta3 doc w lazem tsir bel uid
+    await userCollection.doc(user.uid)
+        .set(user.toJson());// step 3 : .set bch n3abo el doc eli san3naha
   }
 
   Future<void> saveUserLocally(Cuser user) async {

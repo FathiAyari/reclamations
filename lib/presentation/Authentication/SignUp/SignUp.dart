@@ -18,7 +18,6 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   bool loading = false;
-  String role = 'client';
   final _formkey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   TextEditingController lastNameController = TextEditingController();
@@ -153,15 +152,8 @@ class _SignupScreenState extends State<SignupScreen> {
                                             setState(() {
                                               loading = false;
                                             });
-                                            AuthServices().getUserData().then((value) {
-                                              AuthServices().saveUserLocally(value);
-
-                                              if (value.role == 'client') {
-                                                //client
-                                              } else if (value.role == 'admin') {
-                                                //admin
-                                              }
-                                            });
+                                          // navigation lel client screen
+                                            Navigator.pushNamed(context, AppRouting.clientHome);
                                           } else {
                                             setState(() {
                                               loading = false;
