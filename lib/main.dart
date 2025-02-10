@@ -1,13 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:reclamations/exercices/view/to_do_list_view.dart';
 import 'package:reclamations/presentation/Authentication/SignIn/SignIn.dart';
 import 'package:reclamations/presentation/client/home_client.dart';
 import 'package:reclamations/presentation/ressources/routes/router.dart';
-
+import 'package:get/get.dart';
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
 
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   await Firebase.initializeApp(); // initialize firebase app
   runApp(const MyApp());
 }
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Reclamations',
       theme: ThemeData(
@@ -35,13 +37,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-//TODO
-/*
-* 1) create admin screens like the client
-* Dashboard
-* Reclamations
-* Utilisateurs
-* Profil
-* TIP => start with the HomeAdmin screen in the project
-* */

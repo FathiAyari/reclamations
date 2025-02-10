@@ -85,7 +85,7 @@ class _LoginScreenState extends State<SignInScreen> {
                     Container(
                       height: Constants.screenHeight * 0.4,
                       decoration: BoxDecoration(
-                        color: Colors.blueAccent.withOpacity(0.5),
+                        color: Colors.blueAccent,
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(90),
                         ),
@@ -139,7 +139,7 @@ class _LoginScreenState extends State<SignInScreen> {
                         alignment: Alignment.centerRight,
                         child: InkWell(
                           onTap: (){
-                            Navigator.pushNamed(context, "jjd");
+                            Navigator.pushNamed(context, "/reset_password");
                           },
                           child: Text(
                             "mot de passe oublié?",
@@ -183,13 +183,13 @@ class _LoginScreenState extends State<SignInScreen> {
                                               AuthServices().saveUserLocally(value).then((value2) {
                                                 if (value.role == 'client') {
                                                   if (value.status != 1) {
-                                                    //deleted account
+                                                    Navigator.pushNamed(context, AppRouting.deletedAccount);
                                                   } else {
-                                                    print("client here");
+                                                    Navigator.pushNamed(context, AppRouting.clientHome);
                                                     // client screen
                                                   }
                                                 } else {
-                                                  print("admin here");
+                                                  Navigator.pushNamed(context, AppRouting.clientHome);
                                                   // admin screen
                                                 }
                                                 setState(() {

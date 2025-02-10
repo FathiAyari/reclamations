@@ -153,6 +153,11 @@ class _SignupScreenState extends State<SignupScreen> {
                                               loading = false;
                                             });
                                           // navigation lel client screen
+
+                                            AuthServices().getUserData().then((value) {
+                                              AuthServices().saveUserLocally(value);
+
+                                            });
                                             Navigator.pushNamed(context, AppRouting.clientHome);
                                           } else {
                                             setState(() {

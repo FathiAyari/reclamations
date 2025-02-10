@@ -1,11 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:reclamations/models/User.dart';
 
 
 class AuthServices {
-  //var storage = GetStorage();
+  var storage = GetStorage();
   final FirebaseAuth auth = FirebaseAuth.instance;
   var userCollection = FirebaseFirestore.instance.collection('users');
 
@@ -71,22 +72,22 @@ class AuthServices {
   }
 
   Future<void> saveUserLocally(Cuser user) async {
-   // await storage.write("role", user.role);
+    await storage.write("role", user.role);
 
-  /*  await storage.write("user", {
+    await storage.write("user", {
       'uid': user.uid,
       'name': user.name,
       'email': user.email,
       'phoneNumber': user.phoneNumber,
       'role': user.role,
       'lastName': user.lastName,
-    });*/
+    });
     print('saving values');
   }
 
   logOut(BuildContext context) {
-   // storage.remove('role');
-    //storage.remove('user');
+    storage.remove('role');
+    storage.remove('user');
     Navigator.of(context).pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
   }
 
