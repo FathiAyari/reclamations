@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:reclamations/presentation/client/screens/dashboard.dart';
-import 'package:reclamations/presentation/client/screens/notification.dart';
+import 'package:reclamations/presentation/client/screens/my_notifications.dart';
+import 'package:reclamations/presentation/client/screens/my_reclamations.dart';
 import 'package:reclamations/presentation/client/screens/profil.dart';
-import 'package:reclamations/presentation/client/screens/reclamations.dart';
 
 class HomeClient extends StatefulWidget {
   const HomeClient({super.key});
@@ -19,7 +19,7 @@ class _HomeClientState extends State<HomeClient> {
     BottomNavigationBarItem(icon: Icon(Icons.notifications),label: "Notifications"),
     BottomNavigationBarItem(icon: Icon(Icons.account_circle),label: "Profil"),
   ];
-  List<Widget> pages=[Dashboard(),Reclamations(),Notifications(),Profil(),];
+  List<Widget> pages=[Dashboard(),MyReclamations(),MyNotifications(),Profil(),];
   int selectedItem=0;
   @override
   Widget build(BuildContext context) {

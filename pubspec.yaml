@@ -38,6 +38,10 @@ dependencies:
   firebase_auth: ^5.4.1
   cloud_firestore: ^5.6.2
   lottie: ^3.3.1
+  flutter_slidable: ^3.1.0
+  fluttertoast: ^8.2.4 # est une package pour afficher des messages toast
+  readmore: ^3.0.0
+
   intl: ^0.20.2
   get_storage: ^2.1.1
   hive_flutter: ^1.1.0
